@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=3 uid="uid://01ebugdma518"]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_g4jno"]
+[ext_resource type="Texture2D" uid="uid://y6t4obrvj40x" path="res://ui/health.png" id="1_qh1f0"]
+[ext_resource type="Texture2D" uid="uid://c8gne4wo3facs" path="res://ui/happy.png" id="2_ixjlf"]
+[ext_resource type="Texture2D" uid="uid://dn1mhock7hi3l" path="res://food/burger/burger.png" id="2_j5071"]
+[ext_resource type="Texture2D" uid="uid://bin3pn0ysh47v" path="res://ui/dollar.png" id="2_u1wmn"]
+[ext_resource type="Texture2D" uid="uid://b7oe6je0fqm37" path="res://ui/trash.png" id="4_4c555"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdirq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jktc"]
+bg_color = Color(0.721569, 0.494118, 0.423529, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_g4jno")
+
+[node name="M" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="V" type="HBoxContainer" parent="M"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="M/V"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_u1wmn")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://ui/dollar.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "557879fda6f81a192d74c7c44791a0fb"
+
+[node name="MoneyLabel" type="Label" parent="M/V"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00050"
+
+[node name="SatiationContainer" type="HBoxContainer" parent="M/V"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="M/V/SatiationContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_j5071")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://burger/burger.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "8931141df8f685c56a9cb4c8e7f22e25"
+
+[node name="SatiationBar" type="ProgressBar" parent="M/V/SatiationContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qdirq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5jktc")
+value = 50.0
+show_percentage = false
+
+[node name="HappinessContainer" type="HBoxContainer" parent="M/V"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="M/V/HappinessContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ixjlf")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://ui/happy.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "bb51ca0566d2aa6500e837931ec3580b"
+
+[node name="HappinessBar" type="ProgressBar" parent="M/V/HappinessContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qdirq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5jktc")
+value = 50.0
+show_percentage = false
+
+[node name="HealthContainer" type="HBoxContainer" parent="M/V"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="M/V/HealthContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_qh1f0")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://ui/health.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "67298031055e31881e55386f31196c34"
+
+[node name="HealthBar" type="ProgressBar" parent="M/V/HealthContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qdirq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5jktc")
+value = 50.0
+show_percentage = false
+
+[node name="Trashcan" type="TextureRect" parent="M/V"]
+unique_name_in_owner = true
+show_behind_parent = true
+z_index = -1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("4_4c555")
+stretch_mode = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://ui/trash.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ec156f3b7667ee5169be6095715d6d38"
+
+[connection signal="mouse_entered" from="M/V/Trashcan" to="." method="_on_trashcan_mouse_entered"]
+[connection signal="mouse_exited" from="M/V/Trashcan" to="." method="_on_trashcan_mouse_exited"]

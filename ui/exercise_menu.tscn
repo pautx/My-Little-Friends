@@ -1,0 +1,160 @@
+[gd_scene load_steps=4 format=3 uid="uid://brxshj7v0q2bh"]
+
+[ext_resource type="Script" path="res://ui/exercise_menu.gd" id="1_fo6ly"]
+[ext_resource type="AudioStream" uid="uid://cmavww848rgc1" path="res://ui/button_press.wav" id="2_gpy1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og70u"]
+bg_color = Color(0.435294, 0.690196, 0.717647, 1)
+
+[node name="ExerciseMenu" type="CanvasLayer"]
+script = ExtResource("1_fo6ly")
+
+[node name="M" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 78
+
+[node name="C" type="ColorRect" parent="M"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.696109, 0.249019, 0.289667, 1)
+
+[node name="M" type="MarginContainer" parent="M/C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="V" type="VBoxContainer" parent="M/C/M"]
+layout_mode = 2
+
+[node name="IntesityLabel" type="Label" parent="M/C/M/V"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Exercise Intensity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExerciseContainer" type="HBoxContainer" parent="M/C/M/V"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="LightButton" type="Button" parent="M/C/M/V/ExerciseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Light"
+
+[node name="ModerateButton" type="Button" parent="M/C/M/V/ExerciseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Moderate"
+
+[node name="VigorousButton" type="Button" parent="M/C/M/V/ExerciseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Vigorous"
+
+[node name="MaximumButton" type="Button" parent="M/C/M/V/ExerciseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Maximum"
+
+[node name="ExitButton" type="Button" parent="M/C/M/V"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Exit"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gpy1h")
+
+[connection signal="pressed" from="M/C/M/V/ExerciseContainer/LightButton" to="." method="_on_light_button_pressed"]
+[connection signal="pressed" from="M/C/M/V/ExerciseContainer/ModerateButton" to="." method="_on_moderate_button_pressed"]
+[connection signal="pressed" from="M/C/M/V/ExerciseContainer/VigorousButton" to="." method="_on_vigorous_button_pressed"]
+[connection signal="pressed" from="M/C/M/V/ExerciseContainer/MaximumButton" to="." method="_on_maximum_button_pressed"]
+[connection signal="pressed" from="M/C/M/V/ExitButton" to="." method="_on_exit_button_pressed"]

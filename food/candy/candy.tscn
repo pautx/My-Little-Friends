@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsgc4dktehsnp"]
+
+[ext_resource type="Texture2D" uid="uid://yiiqpblbxb3i" path="res://food/candy/candy.png" id="1_v0dil"]
+
+[node name="Candy" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_v0dil")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://food/candy/candy.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b00ea51e903d1534916cb5e31a8336a7"

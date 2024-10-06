@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://85yubgn2hxre"]
+
+[ext_resource type="Texture2D" uid="uid://bttsnigg48xbp" path="res://food/cookie/cookie.png" id="1_bmlec"]
+
+[node name="Cookie" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_bmlec")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://food/cookie/cookie.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e14114cd59c95976d464bf3c4f21563a"

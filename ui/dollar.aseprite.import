@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dcmagjhgnb3xl"
+path="res://.godot/imported/dollar.aseprite-db9b0fc247fb3957c65d01684f373038.res"
+
+[deps]
+
+source_file="res://ui/dollar.aseprite"
+dest_files=["res://.godot/imported/dollar.aseprite-db9b0fc247fb3957c65d01684f373038.res"]
+
+[params]
+

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://di6w6r6gvxtng"]
+
+[ext_resource type="Texture2D" uid="uid://cylwn4bve8mcq" path="res://food/cake/cake.png" id="1_jp6vt"]
+
+[node name="Cake" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jp6vt")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://food/cake/cake.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e28b78e118bb77f1baca986fbaccf813"

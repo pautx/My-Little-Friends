@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://uc724awwxh3m"
+path="res://.godot/imported/sad.aseprite-124f13e88ea020bdb3680d1578bc9a2b.res"
+
+[deps]
+
+source_file="res://creature/emotions/sad.aseprite"
+dest_files=["res://.godot/imported/sad.aseprite-124f13e88ea020bdb3680d1578bc9a2b.res"]
+
+[params]
+

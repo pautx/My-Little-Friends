@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c6nbgwenfsg3j"
+path="res://.godot/imported/candy.aseprite-87f8c54183b0a310b3e7f603be246d45.res"
+
+[deps]
+
+source_file="res://food/candy/candy.aseprite"
+dest_files=["res://.godot/imported/candy.aseprite-87f8c54183b0a310b3e7f603be246d45.res"]
+
+[params]
+

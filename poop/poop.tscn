@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd6rarcjhe0x5"]
+
+[ext_resource type="Script" path="res://poop/poop.gd" id="1_7val2"]
+[ext_resource type="Texture2D" uid="uid://ugp36h70ngfy" path="res://poop/poop.png" id="1_qv1im"]
+[ext_resource type="AudioStream" uid="uid://dj0rbxl5wcyly" path="res://poop/poop.wav" id="3_mjr3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pabci"]
+atlas = ExtResource("1_qv1im")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vr1ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pabci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w65d8"]
+size = Vector2(10, 10)
+
+[node name="Poop" type="StaticBody2D"]
+collision_layer = 4
+input_pickable = true
+script = ExtResource("1_7val2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vr1ny")
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://poop/poop.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5b2594daaae83b0bd9de52ce3efba37b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w65d8")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mjr3e")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

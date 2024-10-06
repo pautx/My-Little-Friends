@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=3 uid="uid://2pwgw7udkx7u"]
+
+[ext_resource type="Script" path="res://ui/food_menu.gd" id="1_xliit"]
+[ext_resource type="Texture2D" uid="uid://d37ifwqrrp2qy" path="res://food/pellet/pellet.png" id="2_xfk55"]
+[ext_resource type="Texture2D" uid="uid://deomnq0cusj7f" path="res://food/bread/bread.png" id="3_ejns7"]
+[ext_resource type="Texture2D" uid="uid://b4378teq48ndf" path="res://food/apple/apple.png" id="4_hroly"]
+[ext_resource type="Texture2D" uid="uid://dn1mhock7hi3l" path="res://food/burger/burger.png" id="5_ulscu"]
+[ext_resource type="Texture2D" uid="uid://yiiqpblbxb3i" path="res://food/candy/candy.png" id="6_mom2t"]
+[ext_resource type="Texture2D" uid="uid://bttsnigg48xbp" path="res://food/cookie/cookie.png" id="6_qvciv"]
+[ext_resource type="Texture2D" uid="uid://cylwn4bve8mcq" path="res://food/cake/cake.png" id="8_qudlg"]
+[ext_resource type="AudioStream" uid="uid://cmavww848rgc1" path="res://ui/button_press.wav" id="9_64l2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og70u"]
+bg_color = Color(0.435294, 0.690196, 0.717647, 1)
+
+[node name="FoodMenu" type="CanvasLayer"]
+script = ExtResource("1_xliit")
+
+[node name="M" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 78
+
+[node name="C" type="ColorRect" parent="M"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.696109, 0.249019, 0.289667, 1)
+
+[node name="M" type="MarginContainer" parent="M/C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="FoodContainer" type="GridContainer" parent="M/C/M"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="PelletButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Pellet
+5"
+icon = ExtResource("2_xfk55")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="BreadButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Bread
+5"
+icon = ExtResource("3_ejns7")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="AppleButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Apple"
+icon = ExtResource("4_hroly")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="BurgerButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Burger"
+icon = ExtResource("5_ulscu")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="CandyButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Candy"
+icon = ExtResource("6_mom2t")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="CookieButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Cookie"
+icon = ExtResource("6_qvciv")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="CakeButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Cake"
+icon = ExtResource("8_qudlg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="ExitButton" type="Button" parent="M/C/M/FoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_og70u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_og70u")
+text = "Exit"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_64l2o")
+
+[connection signal="pressed" from="M/C/M/FoodContainer/PelletButton" to="." method="_on_pellet_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/BreadButton" to="." method="_on_bread_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/AppleButton" to="." method="_on_apple_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/BurgerButton" to="." method="_on_burger_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/CandyButton" to="." method="_on_candy_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/CookieButton" to="." method="_on_cookie_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/CakeButton" to="." method="_on_cake_button_pressed"]
+[connection signal="pressed" from="M/C/M/FoodContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://u82s6wphdu6e"
+path="res://.godot/imported/bread.aseprite-5a6ae34cfe6096b652ce44ab596da191.res"
+
+[deps]
+
+source_file="res://food/bread/bread.aseprite"
+dest_files=["res://.godot/imported/bread.aseprite-5a6ae34cfe6096b652ce44ab596da191.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cf6hme80m2eci"
+path="res://.godot/imported/burger.aseprite-d5df3ffc2d5024c29ab9cb3419b7edea.res"
+
+[deps]
+
+source_file="res://food/burger/burger.aseprite"
+dest_files=["res://.godot/imported/burger.aseprite-d5df3ffc2d5024c29ab9cb3419b7edea.res"]
+
+[params]
+

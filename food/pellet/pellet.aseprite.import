@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dcjaglixixvtk"
+path="res://.godot/imported/pellet.aseprite-da297c9be1de1923561eb14a72ce6aae.res"
+
+[deps]
+
+source_file="res://food/pellet/pellet.aseprite"
+dest_files=["res://.godot/imported/pellet.aseprite-da297c9be1de1923561eb14a72ce6aae.res"]
+
+[params]
+

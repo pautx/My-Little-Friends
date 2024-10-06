@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=3 uid="uid://cynispg6gfihn"]
+
+[ext_resource type="Texture2D" uid="uid://ddudqjyl1ymen" path="res://creature/creature.png" id="1_kx70y"]
+[ext_resource type="Script" path="res://creature/creature.gd" id="1_sm6a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2p8o"]
+atlas = ExtResource("1_kx70y")
+region = Rect2(0, 0, 21, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooltw"]
+atlas = ExtResource("1_kx70y")
+region = Rect2(21, 0, 21, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ron27"]
+atlas = ExtResource("1_kx70y")
+region = Rect2(42, 0, 21, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd6q2"]
+atlas = ExtResource("1_kx70y")
+region = Rect2(0, 30, 21, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsn6y"]
+atlas = ExtResource("1_kx70y")
+region = Rect2(21, 30, 21, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqi0f"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_i2p8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooltw")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooltw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ron27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd6q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsn6y")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0oq7"]
+size = Vector2(10, 8.5)
+
+[node name="Creature" type="CharacterBody2D"]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_sm6a1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_tqi0f")
+animation = &"blink"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://creature/creature.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "fd8af2302721433479c29319dcd1794e"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_s0oq7")
+
+[node name="Emotion" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -22)
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://creature/emotions/sad.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "75003d0b9c64711d939ffc91310a031e"
+
+[node name="StateTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="PoopTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="SleepTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="EmotionTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="LeftBoundCheck" type="RayCast2D" parent="."]
+target_position = Vector2(-10, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RightBoundCheck" type="RayCast2D" parent="."]
+target_position = Vector2(10, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="StateTimer" to="." method="_on_state_timer_timeout"]
+[connection signal="timeout" from="PoopTimer" to="." method="_on_poop_timer_timeout"]
+[connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
+[connection signal="timeout" from="EmotionTimer" to="." method="_on_emotion_timer_timeout"]

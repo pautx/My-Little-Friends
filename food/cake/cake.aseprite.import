@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://di7vwrvyuf0c2"
+path="res://.godot/imported/cake.aseprite-3dd3326479601d53986fed4ecfe9adeb.res"
+
+[deps]
+
+source_file="res://food/cake/cake.aseprite"
+dest_files=["res://.godot/imported/cake.aseprite-3dd3326479601d53986fed4ecfe9adeb.res"]
+
+[params]
+

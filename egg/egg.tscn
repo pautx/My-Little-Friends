@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3fbgcbyqw3on"]
+
+[ext_resource type="Script" path="res://egg/egg.gd" id="1_agume"]
+[ext_resource type="Texture2D" uid="uid://b8547srkio337" path="res://egg/egg.png" id="1_h7q4a"]
+[ext_resource type="AudioStream" uid="uid://y4c75840pw47" path="res://egg/egg.wav" id="3_7ept1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i84k5"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(0, 0, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohgva"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(12, 0, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4i5j"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(24, 0, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjqlg"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(0, 13, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gv3j"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(12, 13, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paene"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(24, 13, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgb5r"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(0, 26, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvk6n"]
+atlas = ExtResource("1_h7q4a")
+region = Rect2(12, 26, 12, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ampsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i84k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohgva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4i5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjqlg")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0gv3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjqlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4i5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohgva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i84k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohgva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paene")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgb5r")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_kvk6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgb5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paene")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohgva")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ml5xm"]
+size = Vector2(10, 13)
+
+[node name="Egg" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_agume")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ampsc")
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://egg/egg.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d3419c770d3c7426edf2fa12e2e91f74"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ml5xm")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ept1")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcpk17jcu7wtr"]
+
+[ext_resource type="Texture2D" uid="uid://dn1mhock7hi3l" path="res://food/burger/burger.png" id="1_ux0sp"]
+
+[node name="Burger" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ux0sp")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://food/burger/burger.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0f9b88e5805c2aee5c6bfef82566a53e"

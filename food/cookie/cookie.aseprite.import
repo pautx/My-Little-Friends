@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bqal3gpaahj7p"
+path="res://.godot/imported/cookie.aseprite-3b1f17c701191643fa290eec6086436e.res"
+
+[deps]
+
+source_file="res://food/cookie/cookie.aseprite"
+dest_files=["res://.godot/imported/cookie.aseprite-3b1f17c701191643fa290eec6086436e.res"]
+
+[params]
+

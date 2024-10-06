@@ -1,0 +1,234 @@
+[gd_scene load_steps=20 format=3 uid="uid://rn0w28kmuwc1"]
+
+[ext_resource type="PackedScene" uid="uid://01ebugdma518" path="res://ui/hud.tscn" id="1_201nx"]
+[ext_resource type="Script" path="res://game.gd" id="1_nj1yq"]
+[ext_resource type="PackedScene" uid="uid://cynispg6gfihn" path="res://creature/creature.tscn" id="2_ksd76"]
+[ext_resource type="Texture2D" uid="uid://bin3pn0ysh47v" path="res://ui/dollar.png" id="3_2pnee"]
+[ext_resource type="PackedScene" uid="uid://b3fbgcbyqw3on" path="res://egg/egg.tscn" id="3_ai8tq"]
+[ext_resource type="PackedScene" uid="uid://2pwgw7udkx7u" path="res://ui/food_menu.tscn" id="4_sog1m"]
+[ext_resource type="PackedScene" uid="uid://brxshj7v0q2bh" path="res://ui/exercise_menu.tscn" id="5_jna3t"]
+[ext_resource type="AudioStream" uid="uid://cmavww848rgc1" path="res://ui/button_press.wav" id="7_8w1vm"]
+[ext_resource type="AudioStream" uid="uid://ctlvjhmsi3m0f" path="res://cash.wav" id="8_akwbk"]
+
+[sub_resource type="Gradient" id="Gradient_dejh2"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.243137, 0.231373, 0.4, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q5is2"]
+gradient = SubResource("Gradient_dejh2")
+
+[sub_resource type="Curve" id="Curve_ummxi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.253333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3x5f7"]
+curve = SubResource("Curve_ummxi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ab66k"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+scale_max = 0.4
+alpha_curve = SubResource("CurveTexture_3x5f7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7u8q"]
+size = Vector2(649, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpxgw"]
+size = Vector2(28, 360)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv4r5"]
+size = Vector2(28, 360)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjnir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slgn5"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+bg_color = Color(0.721569, 0.494118, 0.423529, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nj1yq")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-7.03335e-06, 9.47714e-06)
+scale = Vector2(10, 5.625)
+texture = SubResource("GradientTexture2D_q5is2")
+metadata/_edit_lock_ = true
+
+[node name="Friends" type="Node2D" parent="."]
+
+[node name="Poops" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Creature" parent="." instance=ExtResource("2_ksd76")]
+visible = false
+position = Vector2(0, 127)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_ab66k")
+texture = ExtResource("3_2pnee")
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+
+[node name="Egg" parent="." instance=ExtResource("3_ai8tq")]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-0.5, 162.5)
+shape = SubResource("RectangleShape2D_o7u8q")
+
+[node name="LeftBound" type="Area2D" parent="."]
+position = Vector2(-340, -1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBound"]
+shape = SubResource("RectangleShape2D_xpxgw")
+
+[node name="RightBound" type="Area2D" parent="."]
+position = Vector2(340, 0)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBound"]
+shape = SubResource("RectangleShape2D_xv4r5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("1_201nx")]
+visible = false
+
+[node name="FoodMenu" parent="." instance=ExtResource("4_sog1m")]
+visible = false
+
+[node name="ExerciseMenu" parent="." instance=ExtResource("5_jna3t")]
+visible = false
+
+[node name="WorkMenu" type="CanvasLayer" parent="."]
+
+[node name="Options" type="CanvasLayer" parent="."]
+
+[node name="C" type="ColorRect" parent="Options"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.662745, 0.294118, 0.329412, 1)
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="Options/C"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FeedButton" type="Button" parent="Options/C/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cjnir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_slgn5")
+text = "FEED"
+
+[node name="ExerciseButton" type="Button" parent="Options/C/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cjnir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_slgn5")
+text = "EXERCISE"
+
+[node name="WorkButton" type="Button" parent="Options/C/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cjnir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_slgn5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_slgn5")
+text = "WORK"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8w1vm")
+
+[node name="Cash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_akwbk")
+
+[node name="NewFriendTimer" type="Timer" parent="."]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[connection signal="happiness_changed" from="Creature" to="." method="_on_creature_happiness_changed"]
+[connection signal="health_changed" from="Creature" to="." method="_on_creature_health_changed"]
+[connection signal="pooped" from="Creature" to="." method="_on_creature_pooped"]
+[connection signal="satiation_changed" from="Creature" to="." method="_on_creature_satiation_changed"]
+[connection signal="trashcan_hovered" from="HUD" to="." method="_on_hud_trashcan_hovered"]
+[connection signal="food_item_pressed" from="FoodMenu" to="." method="_on_food_menu_food_item_pressed"]
+[connection signal="exercise_button_pressed" from="ExerciseMenu" to="." method="_on_exercise_menu_exercise_button_pressed"]
+[connection signal="pressed" from="Options/C/ButtonsContainer/FeedButton" to="." method="_on_feed_button_pressed"]
+[connection signal="pressed" from="Options/C/ButtonsContainer/ExerciseButton" to="." method="_on_exercise_button_pressed"]
+[connection signal="pressed" from="Options/C/ButtonsContainer/WorkButton" to="." method="_on_work_button_pressed"]
+[connection signal="timeout" from="NewFriendTimer" to="." method="_on_new_friend_timer_timeout"]

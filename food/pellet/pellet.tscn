@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskyuxm3cv23c"]
+
+[ext_resource type="Texture2D" uid="uid://d37ifwqrrp2qy" path="res://food/pellet/pellet.png" id="1_ev6sn"]
+
+[node name="Pellet" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ev6sn")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://food/pellet/pellet.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7931d22cb7358397b3cbf4337b6e1f9b"
